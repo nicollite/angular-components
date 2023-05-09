@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-grow: 1;
+  margin: 20px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.test-component-wrapper {
+  padding: 50px;
+  background-color: #747aa8;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
