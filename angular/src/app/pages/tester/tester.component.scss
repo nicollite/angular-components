@@ -5,11 +5,35 @@
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.test-component-wrapper {
+.test-component-wrapper-list {
   padding: 50px;
-  background-color: #747aa8;
+  background-color: #b2d6eb;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+// Custom test compoennts classes
+.width-500 {
+  width: 500px !important;
 }

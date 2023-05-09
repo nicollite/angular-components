@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { FormControl } from "@angular/forms";
 
 @Component({
   templateUrl: "./tester.component.html",
@@ -13,6 +13,7 @@ export class TesterComponent implements OnInit {
 
   ngOnInit(): void {
     this.control1.setValidators(this.testValidators() as any);
+    this.control2.setValidators(this.testValidators() as any);
   }
 
   testValidators() {

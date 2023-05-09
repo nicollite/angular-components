@@ -1,9 +1,40 @@
-<div class="test-component-wrapper">
+<div class="test-component-wrapper-list">
   <div>
-    <input type="text" angInput [formControl]="control1" />
+    <p>Normal input:</p>
+    <input type="text" angInput />
   </div>
 
   <div>
-    <input type="text" angInput [formControl]="control2" />
+    <p>Input with validators:</p>
+    <input type="text" angInput [formControl]="control1" />
+
+    <p>Show sucess color:</p>
+    <input type="text" angInput [formControl]="control2" showSuccess />
+  </div>
+
+  <div>
+    <p>Input with icons:</p>
+
+    <div class="ang-input-icon-left">
+      <span class="material-icons">search</span>
+      <input type="text" angInput />
+    </div>
+
+    <div class="ang-input-icon-right">
+      <input type="text" angInput />
+      <span class="material-icons">refresh</span>
+    </div>
+  </div>
+
+  <div class="width-500">
+    <p>Normal input:</p>
+    <input type="text" angInput />
+
+    <p>Input with full width:</p>
+    <input type="text" angInput fullWidth />
+  </div>
+
+  <div>
+    <input type="text" angInput />
   </div>
 </div>
