@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+header {
+  padding: 20px;
+  background-color: $primary;
+  color: #fff;
+}
+
+.router-wrapper {
+  flex-grow: 1;
+  display: flex;
+}
+
+footer {
+  min-height: 70px;
+  padding: 20px;
+  background-color: $primary;
+  color: #fff;
+}
