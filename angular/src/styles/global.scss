@@ -1,0 +1,7 @@
+@forward "../app/components/ang-input/ang-input.directive";
+
+@use "../app/components/ang-input/ang-input.directive" as ang-input-theme;
+
+@mixin ang-theme-components() {
+  @include ang-input-theme.ang-input();
+}
