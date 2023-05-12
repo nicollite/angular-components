@@ -1,0 +1,29 @@
+<div class="ang-form-field-wrapper">
+  <div class="ang-form-field-main-content">
+    <ng-template [ngIf]="hasPreffix">
+      <ng-content select="[angPreffix]"></ng-content>
+    </ng-template>
+
+    <ng-content select="label"></ng-content>
+
+    <ng-content></ng-content>
+
+    <ng-template [ngIf]="_showPending">
+      <span class="loader"></span>
+    </ng-template>
+
+    <ng-template [ngIf]="hasSuffix">
+      <ng-content select="[angSuffix]"></ng-content>
+    </ng-template>
+  </div>
+
+  <div class="ang-form-field-subscript-wrapper" [ngSwitch]="getDisplayedSubscriptMessages()">
+    <div *ngSwitchCase="'error'">
+      <ng-content select="ang-error,[angError]"></ng-content>
+    </div>
+
+    <div *ngSwitchCase="'hint'">
+      <ng-content select="ang-error,[angError]"></ng-content>
+    </div>
+  </div>
+</div>
