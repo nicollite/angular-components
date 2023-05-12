@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { AngInputDirective } from "./ang-input.directive";
+import { AngInput } from "./ang-input.directive";
 
 @NgModule({
-  declarations: [AngInputDirective],
-  exports: [AngInputDirective],
+  declarations: [AngInput],
+  exports: [AngInput],
   imports: [CommonModule],
 })
 export class AngInputModule {}

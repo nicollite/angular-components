@@ -1,20 +1,30 @@
 <div class="test-component-wrapper-list">
-  <div>
+  <!-- <div>
     <p>Normal input:</p>
     <input type="text" angInput />
   </div>
 
   <div>
     <p>Input with validators:</p>
-    <input type="text" angInput [formControl]="control1" />
+    <input type="text" angInput [formControl]="control2" />
 
     <p>Show sucess color:</p>
-    <input type="text" angInput [formControl]="control2" showSuccess />
+    <input type="text" angInput [formControl]="control3" showSuccess />
   </div>
 
   <div>
     <p>Input with icons:</p>
+    <ang-form-field>
+      <span class="material-icons" angPreffix>shopping_cart</span>
+      <input type="text" angInput />
+    </ang-form-field>
 
+    <ang-form-field>
+      <span class="material-icons" angSuffix>done</span>
+      <input type="text" angInput />
+    </ang-form-field>
+
+    <p>Input with icons without form field:</p>
     <div class="ang-input-icon-left">
       <span class="material-icons">search</span>
       <input type="text" angInput />
@@ -35,6 +45,25 @@
   </div>
 
   <div>
-    <input type="text" angInput />
+    <p>Input with error:</p>
+    <ang-form-field>
+      <input type="text" angInput [formControl]="control3" />
+      <ang-error>{{ getErrorMessage() }}</ang-error>
+    </ang-form-field>
+  </div>
+
+  <div>
+    <p>Input pending spinner:</p>
+    <ang-form-field showPending>
+      <input type="text" angInput [formControl]="control4" />
+    </ang-form-field>
+  </div> -->
+
+  <div>
+    <p>Input with a label:</p>
+    <ang-form-field>
+      <label for="">Label for input</label>
+      <input type="text" angInput [formControl]="control5" />
+    </ang-form-field>
   </div>
 </div>

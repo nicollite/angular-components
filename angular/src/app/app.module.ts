@@ -10,6 +10,7 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { ComponentViewerComponent } from "./pages/component-viewer/component-viewer.component";
 import { TesterComponent } from "./pages/tester/tester.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AngFormFieldModule } from './components/ang-form-field/ang-form-field.module';
 
 @NgModule({
   declarations: [AppComponent, ComponentViewerComponent, TesterComponent],
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     ReactiveFormsModule,
     // Component modules
     AngInputModule,
+    AngFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

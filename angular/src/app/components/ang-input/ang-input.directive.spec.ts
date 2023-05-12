@@ -1,8 +1,8 @@
-import { AngInputDirective } from './ang-input.directive';
+import { AngInput } from "./ang-input.directive";
 
-describe('AngInputDirective', () => {
-  it('should create an instance', () => {
-    const directive = new AngInputDirective();
+describe("AngInputDirective", () => {
+  it("should create an instance", () => {
+    const directive = new AngInput();
     expect(directive).toBeTruthy();
   });
 });
