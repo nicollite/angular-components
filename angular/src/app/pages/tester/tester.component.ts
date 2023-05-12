@@ -7,19 +7,20 @@ import { NEVER } from "rxjs";
   styleUrls: ["./tester.component.scss"],
 })
 export class TesterComponent implements OnInit {
-  control1: FormControl = new FormControl("");
-  control2: FormControl = new FormControl("");
-  control3: FormControl = new FormControl("");
-  control4: FormControl = new FormControl("");
-  control5: FormControl = new FormControl("");
+  controls: FormControl[] = [];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.control1.setValidators(this.testValidators() as any);
-    this.control2.setValidators(this.testValidators() as any);
-    this.control3.setValidators(this.testValidators() as any);
-    this.control4.setAsyncValidators(() => NEVER);
+    this.controls = Array(6)
+      .fill(null)
+      .map(_ => new FormControl(""));
+
+    this.controls[0].setValidators(this.testValidators() as any);
+    this.controls[1].setValidators(this.testValidators() as any);
+    this.controls[2].setValidators(this.testValidators() as any);
+    this.controls[3].setAsyncValidators(() => NEVER);
+    this.controls[5].setValidators(this.testValidators() as any);
   }
 
   testValidators() {
@@ -30,10 +31,9 @@ export class TesterComponent implements OnInit {
     };
   }
 
-  getErrorMessage(): string {
-    if (this.control3.hasError("aValueError")) return 'Has the string "a"';
-    if (this.control3.hasError("noValue")) return "Input is empty";
-
+  getErrorMessage(index: number): string {
+    if (this.controls[index].hasError("aValueError")) return 'Has the string "a"';
+    if (this.controls[index].hasError("noValue")) return "Input is empty";
     return "";
   }
 }

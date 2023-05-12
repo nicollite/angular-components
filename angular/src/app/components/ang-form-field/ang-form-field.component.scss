@@ -93,9 +93,10 @@ label {
 .ang-form-field-subscript-wrapper {
   position: absolute;
   margin-top: 3px;
+  font-size: 0.75em;
 
-  ang-error {
+  ang-error,
+  [angError] {
     color: $warn;
-    font-size: 0.75em;
   }
 }

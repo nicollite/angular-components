@@ -48,7 +48,7 @@
     <p>Input with error:</p>
     <ang-form-field>
       <input type="text" angInput [formControl]="control3" />
-      <ang-error>{{ getErrorMessage() }}</ang-error>
+      <ang-error>{{ getErrorMessage(3) }}</ang-error>
     </ang-form-field>
   </div>
 
@@ -57,13 +57,22 @@
     <ang-form-field showPending>
       <input type="text" angInput [formControl]="control4" />
     </ang-form-field>
+  </div>
+
+   <div>
+    <p>Input with a label:</p>
+    <ang-form-field>
+      <label">Label for input</label>
+      <input type="text" angInput [formControl]="control5" />
+    </ang-form-field>
   </div> -->
 
   <div>
-    <p>Input with a label:</p>
+    <p>Input hint:</p>
     <ang-form-field>
-      <label for="">Label for input</label>
-      <input type="text" angInput [formControl]="control5" />
+      <input type="text" angInput [formControl]="controls[5]" />
+      <ang-error>{{ getErrorMessage(5) }}</ang-error>
+      <ang-hint>This is a hint</ang-hint>
     </ang-form-field>
   </div>
 </div>

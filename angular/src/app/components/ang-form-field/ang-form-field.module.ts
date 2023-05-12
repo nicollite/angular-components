@@ -8,7 +8,7 @@ import { AngHint } from "./directives/hint.directive";
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [AngFormFieldComponent, AngError, AngSuffix, AngPreffix, AngHint],
-  exports: [AngFormFieldComponent, AngError, AngSuffix, AngPreffix],
+  declarations: [AngFormFieldComponent, AngError, AngHint, AngSuffix, AngPreffix, AngHint],
+  exports: [AngFormFieldComponent, AngError, AngHint, AngSuffix, AngPreffix],
 })
 export class AngFormFieldModule {}

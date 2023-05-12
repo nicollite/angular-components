@@ -81,16 +81,17 @@ export class AngFormFieldComponent implements OnInit, AfterContentInit {
   }
 
   getDisplayedSubscriptMessages(): "error" | "hint" | "" {
-    if (this.showControlErrors()) return "error";
-    if (this.showHint()) return "error";
+    if (this.isShowErrors()) return "error";
+    if (this.isShowHint()) return "hint";
     return "";
   }
 
-  showControlErrors(): boolean {
+  isShowErrors(): boolean {
+    console.log(this.control, this.control.invalid, this.control.touched, this.errors.length > 0);
     return this.control && this.control.invalid && this.control.touched && this.errors.length > 0;
   }
 
-  showHint(): boolean {
+  isShowHint(): boolean {
     return this.hints.length > 0;
   }
 
