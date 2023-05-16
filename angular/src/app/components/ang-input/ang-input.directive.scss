@@ -30,6 +30,11 @@
     &.input-full-width {
       width: 100%;
     }
+
+    &:disabled {
+      background-color: #f5f7f9;
+      color: #787878;
+    }
   }
 
   .ang-input-icon-left,

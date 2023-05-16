@@ -20,6 +20,7 @@ export interface AngControl {
   control: AbstractControl;
   focus$: Subject<boolean>;
   isFilled$: Subject<boolean>;
+  disabled$: Subject<boolean>;
 }
 
 @Component({
@@ -28,8 +29,10 @@ export interface AngControl {
   styleUrls: ["./ang-form-field.component.scss"],
   encapsulation: ViewEncapsulation.None,
   host: {
+    class: "ang-form-field",
     "[class.ang-form-field-focused]": "isFocused",
     "[class.ang-form-field-filled]": "isFilled",
+    "[class.ang-form-field-disabled]": "isDisabled",
     "[class.ang-form-field-has-prefix]": "hasPreffix",
     "[class.ang-form-field-has-suffix]": "hasSuffix",
   },
@@ -64,12 +67,11 @@ export class AngFormFieldComponent implements OnInit, AfterContentInit {
 
   isFocused: boolean = false;
   isFilled: boolean = false;
+  isDisabled: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log("isFocused", this.isFocused);
-  }
+  ngOnInit(): void {}
 
   ngAfterContentInit(): void {
     this.formFieldControl.focus$.subscribe(isFocused => {
@@ -77,6 +79,10 @@ export class AngFormFieldComponent implements OnInit, AfterContentInit {
     });
     this.formFieldControl.isFilled$.subscribe(isFilled => {
       this.updateFilledState(isFilled);
+    });
+
+    this.formFieldControl.disabled$.subscribe(isDisabled => {
+      this.updateDisabledState(isDisabled);
     });
   }
 
@@ -87,7 +93,6 @@ export class AngFormFieldComponent implements OnInit, AfterContentInit {
   }
 
   isShowErrors(): boolean {
-    console.log(this.control, this.control.invalid, this.control.touched, this.errors.length > 0);
     return this.control && this.control.invalid && this.control.touched && this.errors.length > 0;
   }
 
@@ -96,11 +101,17 @@ export class AngFormFieldComponent implements OnInit, AfterContentInit {
   }
 
   updateFocusedState(isFocused: boolean): void {
+    if (isFocused === this.isFocused) return;
     this.isFocused = isFocused;
   }
 
   updateFilledState(isFilled: boolean): void {
+    if (isFilled === this.isFilled) return;
     this.isFilled = isFilled;
+  }
+
+  updateDisabledState(isDisabled: boolean): void {
+    this.isDisabled = isDisabled;
   }
 
   test() {

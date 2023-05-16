@@ -65,7 +65,7 @@
       <label">Label for input</label>
       <input type="text" angInput [formControl]="control5" />
     </ang-form-field>
-  </div> -->
+  </div> 
 
   <div>
     <p>Input hint:</p>
@@ -73,6 +73,19 @@
       <input type="text" angInput [formControl]="controls[5]" />
       <ang-error>{{ getErrorMessage(5) }}</ang-error>
       <ang-hint>This is a hint</ang-hint>
+    </ang-form-field> 
+  </div> -->
+
+  <div class="d-flex flex-column">
+    <p>Input hint:</p>
+    <ang-form-field>
+      <label>Label (Disabled)</label>
+      <input type="text" angInput [formControl]="controls[6]" [disabled]="disableControl.value" />
     </ang-form-field>
+
+    <div>
+      <input id="disable-control" type="checkbox" [formControl]="disableControl" [value]="true" />
+      <label for="disable-control"> Disable control</label>
+    </div>
   </div>
 </div>

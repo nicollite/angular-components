@@ -9,10 +9,12 @@ import { NEVER } from "rxjs";
 export class TesterComponent implements OnInit {
   controls: FormControl[] = [];
 
+  disableControl: FormControl = new FormControl(false);
+
   constructor() {}
 
   ngOnInit(): void {
-    this.controls = Array(6)
+    this.controls = Array(7)
       .fill(null)
       .map(_ => new FormControl(""));
 
